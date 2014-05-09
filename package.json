@@ -5,8 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "hiredis": "^0.1.16",
-    "restify": "^2.7.0",
-    "redis": "^0.10.1"
+    "redis": "^0.10.1",
+    "restify": "^2.7.0"
   },
   "devDependencies": {},
   "scripts": {
