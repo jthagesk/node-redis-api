@@ -1,0 +1,17 @@
+{
+  "name": "wellmasterapi",
+  "version": "0.0.0",
+  "description": "node rest api for wellmaster",
+  "main": "app.js",
+  "dependencies": {
+    "hiredis": "^0.1.16",
+    "restify": "^2.7.0",
+    "redis": "^0.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Tore Hageskal",
+  "license": "ISC"
+}
