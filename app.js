@@ -1,8 +1,16 @@
 var bunyan = require('bunyan');
 var restify = require('restify');
+var redis = require('redis');
+var url = require('url');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+
+var redisUrl = url.parse(process.env.REDISCLOUD_URL);
+var client = redis.createClient(redisUrl.port, redisUrl.hostname, {no_ready_check: true});
+client.auth(redisUrl.auth.split(":")[1]);
 
 var log = bunyan.createLogger({
-  name: 'my_restify_application',
+  name: 'who-what-where rest api',
   level: process.env.LOG_LEVEL || 'info',
   stream: process.stdout,
   serializers: bunyan.stdSerializers
@@ -10,7 +18,7 @@ var log = bunyan.createLogger({
 
 var server = restify.createServer({
   log: log,
-  name: 'my_restify_application'
+  name: 'who-what-where'
 });
 
 server.use(restify.acceptParser(server.acceptable));
@@ -43,7 +51,7 @@ server.use(function slowPoke(req, res, next) {
   setTimeout(next.bind(this), parseInt((process.env.SLEEP_TIME || 0), 10));
 });
 
-server.post('/echo/:name', function echoParms(req, res, next) {
+server.post('/user/:name', function echoParms(req, res, next) {
   req.log.debug(req.params, 'echoParams: sending back all parameters');
   res.send(req.params);
   next();
