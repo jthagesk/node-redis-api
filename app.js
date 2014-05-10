@@ -2,11 +2,12 @@ var bunyan = require('bunyan');
 var restify = require('restify');
 var redis = require('redis');
 var url = require('url');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 
 var redisUrl = url.parse(process.env.REDISCLOUD_URL);
-
-var client = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
-client.auth(redisURL.auth.split(":")[1]);
+var client = redis.createClient(redisUrl.port, redisUrl.hostname, {no_ready_check: true});
+client.auth(redisUrl.auth.split(":")[1]);
 
 var log = bunyan.createLogger({
   name: 'who-what-where rest api',
@@ -17,7 +18,7 @@ var log = bunyan.createLogger({
 
 var server = restify.createServer({
   log: log,
-  name: 'my_restify_application'
+  name: 'who-what-where'
 });
 
 server.use(restify.acceptParser(server.acceptable));

@@ -6,6 +6,8 @@
   "dependencies": {
     "bunyan": "^0.22.3",
     "hiredis": "^0.1.16",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0",
     "redis": "^0.10.1",
     "restify": "^2.7.0"
   },
