@@ -6,4 +6,5 @@ deploy:
   api_key:
     secure: i6vDpxx8/Xuq3hRGc0AvMeKeSzFifFecVS7Xd+xWedOiA+jQEZc8FEJfwHfymhj7qDhh/hGCg/+paEzyh80tEgc/hpn5vOW3ee9GHFo0jMh/6aF9BwelDzy79ZdsUQ0jvOU8Nj8bx0yoRzUvnDW+zwdQLkDqOJXiGS0cRkgRGN0=
   app: node-redis-api
-  on: master
+  on:
+    branch: master
