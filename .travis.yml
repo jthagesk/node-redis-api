@@ -1,7 +1,7 @@
-language: node_js
-node_js:
-  - "0.10"
 deploy:
   provider: heroku
-deploy-api_key:
-  secure: huHWdRbmgZERtnZA7VsTYmLa+gCNkQmrN3TzJ45kwkv8JbB7xBGKYdWP5fn6+7SWShR13J4R5XkpwvxltrnPFsDS8ORghpx4SWZY5qll3DyMQSzSEHnGDU8wefJG2OqpV0hwfcHyPWsTHy2qblbmO3T3XeIp2mC3vbNlCZfbH74=
+  api_key:
+    secure: i6vDpxx8/Xuq3hRGc0AvMeKeSzFifFecVS7Xd+xWedOiA+jQEZc8FEJfwHfymhj7qDhh/hGCg/+paEzyh80tEgc/hpn5vOW3ee9GHFo0jMh/6aF9BwelDzy79ZdsUQ0jvOU8Nj8bx0yoRzUvnDW+zwdQLkDqOJXiGS0cRkgRGN0=
+  app: node-redis-api
+  on:
+    repo: jthagesk/node-redis-blog
