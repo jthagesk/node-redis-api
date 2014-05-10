@@ -8,3 +8,4 @@ deploy:
   app: node-redis-api
   on:
     branch: master
+    node: "0.10.26"
