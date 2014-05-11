@@ -4,7 +4,6 @@
   "description": "node rest api for who, what where",
   "main": "app.js",
   "dependencies": {
-    "bunyan": "^0.22.3",
     "hiredis": "^0.1.16",
     "passport": "^0.2.0",
     "passport-local": "^1.0.0",
