@@ -56,7 +56,7 @@ server.post('/user/:name', function echoParms(req, res, next) {
   res.send(req.params);
   next();
 });
-
-server.listen(8080, function() {
+var port = process.env.PORT || 8080;
+server.listen(port, function() {
   log.info('%s listening at %s', server.name, server.url);
 });
