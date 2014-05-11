@@ -50,6 +50,11 @@ server.use(function authenticate(req, res, next) {
 server.use(function slowPoke(req, res, next) {
   setTimeout(next.bind(this), parseInt((process.env.SLEEP_TIME || 0), 10));
 });
+function respond(req, res, next) {
+    res.send('Hello Restify!');
+}
+
+server.get('/', respond);
 
 server.post('/user/:name', function echoParms(req, res, next) {
   req.log.debug(req.params, 'echoParams: sending back all parameters');
